@@ -1,0 +1,24 @@
+{
+  "name": "simple-restaurant-page",
+  "version": "1.0.0",
+  "description": "Its a simple restaurant page made using Html, Javascript, css, node and bundled with webpack. This repository is part of the restaurant project described in the JavaScript section of the Odin project.https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "server": "node server.js",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^6.1.1",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
