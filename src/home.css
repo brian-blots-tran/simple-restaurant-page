@@ -1,0 +1,22 @@
+#home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#home-page-heading {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(204, 202, 202);
+}
+
+#squircle {
+  height: 550px;
+  width: 550px;
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  background-color: white;
+  margin-left: 10%;
+  margin-top: 10%;
+}

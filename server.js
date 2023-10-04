@@ -1,5 +1,5 @@
 const express = require("express");
-const webpack = requrie("webpack");
+const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 
 const app = express();
@@ -7,8 +7,10 @@ const config = require("./webpack.config.js");
 const compiler = webpack(config);
 
 const PORT = 3000;
-app.use(webpackDevMiddleware(compiler, {publicPath:config.output.publicPath});
+app.use(
+  webpackDevMiddleware(compiler, { publicPath: config.output.publicPath })
+);
 
-app.listen(PORT,function(){
-    console.log(`App listening on port ${PORT}`)
-})
+app.listen(PORT, function () {
+  console.log(`App listening on port ${PORT}`);
+});
