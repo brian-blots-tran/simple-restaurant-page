@@ -1,22 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 #home-page {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 1;
 }
 
 #home-page-heading {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgb(204, 202, 202);
+  background-color: white;
 }
 
 #squircle {
-  height: 550px;
-  width: 550px;
+  height: 650px;
+  width: 600px;
   border-top-right-radius: 150px;
   border-bottom-left-radius: 150px;
-  background-color: white;
-  margin-left: 10%;
-  margin-top: 10%;
+  background-color: rgb(204, 202, 202);
+  margin: 7% 0 0% 10%;
+}
+
+#heading-title-container {
+  width: 50%;
+  height: 650px;
+  background-color: rgb(204, 202, 202);
+  margin: 7% 0 0 0;
+  display: grid;
+}
+
+#heading-title {
+}
+#heading-subtitle {
+}
+#title-image-container {
+}
+#heading-CTAcontainer {
 }
