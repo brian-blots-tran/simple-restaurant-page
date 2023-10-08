@@ -4,6 +4,12 @@ import {
   appendInOrder,
   setAttributes,
 } from "../../helpers/helpers.js";
+
+const navbar = () => {
+  const navbarContainer = createElement("div", { id: "navbar" });
+  return navbarContainer;
+};
+
 const hero = () => {
   //create content and container for left side of hero
   const leftContainer = createElement("div", { id: "squircle-container" });
@@ -83,7 +89,7 @@ const hero = () => {
 
 const homepage = () => {
   const homepage = createElement("div", { id: "home-page" });
-
+  homepage.appendChild(navbar());
   homepage.appendChild(hero());
 
   return homepage;
