@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  margin: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-family: "Nunito", sans-serif;
+  --secondary-color: rgba(25, 36, 95, 0.8);
+  --highlight-color: #00a4d6;
+  --main-color: rgb(226, 232, 240);
+}
+html,
+body,
+div,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+}
