@@ -1,6 +1,8 @@
-const createDiv = (attribute, attributeName) => {
-  const div = document.createElement("div");
-  div.setAttribute(attribute, attributeName);
+const createElement = (element, attributes) => {
+  console.log(element);
+
+  const div = document.createElement(element);
+  setAttributes(div, attributes);
   return div;
 };
 const appendInOrder = (parent, ...children) => {
@@ -16,4 +18,4 @@ function setAttributes(element, attributes) {
   return element;
 }
 
-export { createDiv, appendInOrder, setAttributes };
+export { createElement, appendInOrder, setAttributes };

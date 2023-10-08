@@ -1,68 +1,88 @@
 import "./home.css";
 import {
-  createDiv,
+  createElement,
   appendInOrder,
   setAttributes,
 } from "../../helpers/helpers.js";
 const hero = () => {
-  const headingContainer = createDiv("id", "home-page-heading");
-  const squircleContainer = createDiv("id", "squircle-container");
-  const squircleDiv = createDiv("id", "squircle");
-  squircleContainer.appendChild(squircleDiv);
-  const headingTitleContainer = createDiv("id", "heading-title-container");
-  const headingTitle = createDiv("id", "heading-title");
+  //create content and container for left side of hero
+  const leftContainer = createElement("div", { id: "squircle-container" });
+  leftContainer.appendChild(createElement("div", { id: "squircle" }));
+
+  //create content for right side of hero starting with headings
+
+  const headingTitle = createElement("div", { id: "heading-title" });
   headingTitle.textContent = "Restaurant dishes with all security measures!";
-  const headingSubtitle = createDiv("id", "heading-subtitle");
+
+  //subheading
+  const headingSubtitle = createElement("div", { id: "heading-subtitle" });
   headingSubtitle.textContent =
     "In the incorporation of the new normality we're allowing 30% of restaurant's capacity.";
-  const subtitlelink = document.createElement("a");
-  setAttributes(subtitlelink, {
+  const subtitlelink = createElement("a", {
     id: "subtitle-link",
     href: "#",
   });
   subtitlelink.textContent = "Book now";
   headingSubtitle.appendChild(subtitlelink);
 
-  const titleImage = createDiv("id", "title-image-container");
-  const headingCTAContainer = createDiv("id", "heading-CTAcontainer");
-  const CTAtext = createDiv("id", "CTAtext");
-  const boldtext = document.createElement("b");
+  //CTA section of right side of hero
+  const headingCTAContainer = createElement("div", {
+    id: "heading-CTAcontainer",
+  });
+  const CTAtext = createElement("div", { id: "CTAtext" });
+  const boldtext = document.createElement("b", { class: "cta-text-embolden" });
   boldtext.innerHTML = "Subscribe to our news letter ";
-  boldtext.setAttribute("class", "cta-text-embolden");
-  CTAtext.appendChild(boldtext);
-  CTAtext.appendChild(document.createTextNode(" and get special offers!"));
+  appendInOrder(
+    CTAtext,
+    boldtext,
+    document.createTextNode(" and get special offers!")
+  );
+
+  //CTA form
   const CTAform = document.createElement("form");
   setAttributes(CTAform, {
     id: "CTA-form",
     action: "",
   });
 
-  const CTAformTextBox = document.createElement("input");
-  setAttributes(CTAformTextBox, {
+  const CTAformTextBox = createElement("input", {
     id: "cta-form-input",
     name: "email",
     type: "email",
     placeholder: "Email",
   });
-  const CTAformBtn = document.createElement("button");
-  CTAformBtn.setAttribute("id", "cta-form-btn");
-  CTAformBtn.textContent = "Sign up";
+
+  const CTAformBtn = createElement("input", {
+    id: "cta-form-btn",
+    type: "submit",
+  });
   appendInOrder(CTAform, CTAformTextBox, CTAformBtn);
+
+  //append CTA content to container
   appendInOrder(headingCTAContainer, CTAtext, CTAform);
+
+  //image section of right side of hero (currently blank)
+  const titleImage = createElement("div", { id: "title-image-container" });
+
+  //append right side content to right side container
+  const rightContainer = createElement("div", {
+    id: "heading-title-container",
+  });
   appendInOrder(
-    headingTitleContainer,
+    rightContainer,
     headingTitle,
     headingSubtitle,
     titleImage,
     headingCTAContainer
   );
 
-  appendInOrder(headingContainer, squircleContainer, headingTitleContainer);
-  return headingContainer;
+  //append left and right side containers to a hero container and return
+  const heroContainer = createElement("div", { id: "home-page-heading" });
+  return appendInOrder(heroContainer, leftContainer, rightContainer);
 };
 
 const homepage = () => {
-  const homepage = createDiv("id", "home-page");
+  const homepage = createElement("div", { id: "home-page" });
 
   homepage.appendChild(hero());
 
