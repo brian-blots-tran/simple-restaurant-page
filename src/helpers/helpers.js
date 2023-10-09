@@ -1,6 +1,4 @@
 const createElement = (element, attributes) => {
-  console.log(element);
-
   const div = document.createElement(element);
   setAttributes(div, attributes);
   return div;

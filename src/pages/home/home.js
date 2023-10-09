@@ -1,14 +1,7 @@
 import "./home.css";
-import {
-  createElement,
-  appendInOrder,
-  setAttributes,
-} from "../../helpers/helpers.js";
 
-const navbar = () => {
-  const navbarContainer = createElement("div", { id: "navbar" });
-  return navbarContainer;
-};
+import Image from "../../images/cake.png";
+import { createElement, appendInOrder } from "../../helpers/helpers.js";
 
 const hero = () => {
   //create content and container for left side of hero
@@ -18,12 +11,13 @@ const hero = () => {
   //create content for right side of hero starting with headings
 
   const headingTitle = createElement("div", { id: "heading-title" });
-  headingTitle.textContent = "Restaurant dishes with all security measures!";
+  headingTitle.textContent =
+    "Oooey Gooey delicious deserts made fresh every day!";
 
   //subheading
   const headingSubtitle = createElement("div", { id: "heading-subtitle" });
   headingSubtitle.textContent =
-    "In the incorporation of the new normality we're allowing 30% of restaurant's capacity.";
+    "Come and treat yourself to some of the most delectable and interesting desert you'll ever eat.";
   const subtitlelink = createElement("a", {
     id: "subtitle-link",
     href: "#",
@@ -41,12 +35,11 @@ const hero = () => {
   appendInOrder(
     CTAtext,
     boldtext,
-    document.createTextNode(" and get special offers!")
+    document.createTextNode("and get special offers!")
   );
 
   //CTA form
-  const CTAform = document.createElement("form");
-  setAttributes(CTAform, {
+  const CTAform = document.createElement("form", {
     id: "CTA-form",
     action: "",
   });
@@ -67,9 +60,11 @@ const hero = () => {
   //append CTA content to container
   appendInOrder(headingCTAContainer, CTAtext, CTAform);
 
-  //image section of right side of hero (currently blank)
+  //image section of right side of hero
   const titleImage = createElement("div", { id: "title-image-container" });
-
+  titleImage.appendChild(
+    createElement("img", { id: "title-image", src: Image })
+  );
   //append right side content to right side container
   const rightContainer = createElement("div", {
     id: "heading-title-container",
@@ -86,10 +81,8 @@ const hero = () => {
   const heroContainer = createElement("div", { id: "home-page-heading" });
   return appendInOrder(heroContainer, leftContainer, rightContainer);
 };
-
 const homepage = () => {
   const homepage = createElement("div", { id: "home-page" });
-  homepage.appendChild(navbar());
   homepage.appendChild(hero());
 
   return homepage;
