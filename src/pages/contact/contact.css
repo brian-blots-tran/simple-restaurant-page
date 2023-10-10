@@ -1,0 +1,8 @@
+#contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.temp-heading {
+  font-size: 6rem;
+}

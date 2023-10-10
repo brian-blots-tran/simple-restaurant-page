@@ -1,6 +1,8 @@
 import "./style.css";
 import navbar from "./pages/components/navbar";
 import homepage from "./pages/home/home.js";
+import contact from "./pages/contact/contact";
+import menu from "./pages/menu/menu";
 
 document.body.appendChild(navbar());
 
@@ -12,9 +14,11 @@ function navigateTo(destination) {
   } else if (destination === "Contact") {
     console.log("switching to contacts page");
     document.body.removeChild(document.body.lastChild);
+    document.body.appendChild(contact());
   } else if (destination === "Menu") {
     console.log("switching to menu page");
     document.body.removeChild(document.body.lastChild);
+    document.body.appendChild(menu());
   }
 }
 
